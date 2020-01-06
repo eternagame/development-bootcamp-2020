@@ -98,6 +98,17 @@ console.log(true && "false"); // false
 console.log([] + []); // ""
 console.log([] - []); // 0
 
+// Another related point is that JS has the idea of "truthy" (true-like)
+// and falsey (false-like) values
+console.log(Boolean(true)); // true
+console.log(Boolean(123)); // true
+console.log(Boolean("hello")); // true
+console.log(Boolean(false)); // false
+console.log(Boolean(0)); // false
+console.log(Boolean("")); // false
+console.log(Boolean(null)); // false
+console.log(Boolean(undefined)); // false
+
 // All operators have a precedence. There is an order of operations,
 // though using parenthesis is often clearer and less error-prone.
 // See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Operator_precedence
