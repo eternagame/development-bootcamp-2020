@@ -28,3 +28,23 @@ interface Point {
 
 const points2: Point[] = [];
 points2.push({x: 5, y: 7}); // Both this and classes have autocomplete!
+
+// Error: Point3D doesn't implement x and y
+class Point3D implements Point {
+  
+}
+
+class Vector implements Point {
+  private length: number;
+  private angle: number;
+  get x() {
+    return 0;
+  }
+  get y() {
+    return 0;
+  }
+  constructor(length: number, angle: number){
+    this.length = length;
+    this.angle = angle
+  }
+}
