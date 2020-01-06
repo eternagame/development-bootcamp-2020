@@ -26,7 +26,7 @@ print('Hello World!');
 function printLines(message: string, lines?: number){
   if (lines === undefined)
     lines = 5;
-  for (let i = 0; i < lines || 1; i++){
+  for (let i = 0; i < lines; i++){
     print(message);
   }
 }
@@ -36,7 +36,7 @@ printLines('Hello World', 4);
 // printLines('hello World', '4'); // => Error
 
 function printLinesDefault(message: string, lines = 5){
-  for (let i = 0; i < lines || 1; i++){
+  for (let i = 0; i < lines; i++){
     print(message);
   }
 }
