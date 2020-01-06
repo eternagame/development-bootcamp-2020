@@ -1,5 +1,11 @@
 // Lesson 1: Variables and Basic Types
 
+// First off, this is a comment!
+/*
+This is a
+multiline comment
+*/
+
 // Javascript can represent a lot of different kinds of data
 
 // Like numbers
