@@ -24,3 +24,30 @@ function getOrderMap(otherOrder: number[]): number[] {
   }
   return idxMap;
 }
+
+/**
+ * Return map of current base indices to adjusted base indices when oligos are rearranged
+ * according to otherorder
+ * @param otherOrder An array of indexes, where the index refers to the new index
+ * the oligo at the given position in the old array should be placed at.
+ * E.g., given oligos in order A B C, [1,2,0] means their new order should be C, A, B
+ * (oligo A, with the old index of 0, should be at new index 1)
+ */
+function reorderedOligosIndexMap(otherOrder: number[]): number[] {
+    if (this._targetOligos == null) return null;
+
+    let originalIndices: number[][] = [];
+    let oligoFirstBaseIndex = this._sequence.length;
+
+    for (let oligo of this._targetOligos) {
+        // The + 1 is used to account for the "cut" base denoting split points between strands
+        originalIndices.push(Utility.range(oligoFirstBaseIndex, oligoFirstBaseIndex + oligo.sequence.length + 1));
+        oligoFirstBaseIndex += oligo.sequence.length + 1;
+    }
+
+    let newOrder = otherOrder || Utility.range(this._targetOligos.length);
+
+    return Utility.range(this._sequence.length).concat(
+        ...Utility.range(this._targetOligos.length).map((idx) => originalIndices[newOrder.indexOf(idx)])
+    );
+}
