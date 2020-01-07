@@ -1,0 +1,26 @@
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+
+.angled {
+  @include transform(rotate(30deg));
+}
+
+.sideways {
+  @include transform(rotate(90deg));
+}
+
+// CSS Equivilent
+.angled {
+  -webkit-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+
+.sideways {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}

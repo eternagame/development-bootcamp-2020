@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Load the JS file -->
+  <script src="https://cdn.jsdelivr.net/npm/@gitgraph/js"></script>
+  <style>
+    body {
+      background-color: #eee;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div id="graph-container"></div>
+
+  <script>
+    let lightBlue = "#5588dd";
+    let red = "#d80000";
+    let darkRed = "#880000";
+
+    /*let initialCommitStyle = {
+        message: {color: lightBlue },
+        dot: {color: lightBlue }
+    };*/
+
+    let headCommitStyle = {
+        // message: {color: red },
+        dot: {color: red }
+    }
+
+    var headTagStyle = {
+        bgColor: red,
+        strokeColor: darkRed
+    }
+
+    const graphContainer = document.getElementById("graph-container");
+    const gitgraph = GitgraphJS.createGitgraph(graphContainer, {
+      template: GitgraphJS.templateExtend(GitgraphJS.TemplateName.Metro, {
+        branch: {
+          label: {
+            display: false
+          }
+        },
+        commit: {
+          message: {
+            displayAuthor: false,
+            displayHash: false,
+          }
+        }
+      })
+    });
+
+    gitgraph.commit("Initial Commit");
+    gitgraph.commit("Add new feature");
+    gitgraph.commit({subject: "Fix a bug", style: headCommitStyle});
+    gitgraph.tag({name: "HEAD", style: headTagStyle});
+  </script>
+</body>
+</html>
