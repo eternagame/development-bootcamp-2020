@@ -1,0 +1,32 @@
+nav {
+  margin: 20px;
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    
+    li {
+      display: inline-block;
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+// CSS Equivilent
+nav {
+  margin: 20px;
+}
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+nav ul li {
+  display: inline-block;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
