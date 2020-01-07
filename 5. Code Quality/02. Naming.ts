@@ -2,5 +2,3 @@
 function setPairs(pairs: number[], temp: number = 37): void {
   this._pairsArray[temp] = pairs.slice();
 }
-
-// Good naming
