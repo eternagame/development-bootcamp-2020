@@ -18,6 +18,21 @@ test('two plus two', () => {
   expect(value).toEqual(4);
 });
 
+test('equvilency of objects', () => {
+  let arr1 = [1,2,3];
+  let arr2 = [1,2,3];
+
+  // Will fail - arr1 != arr2
+  // expect(arr1).toBe(arr2);
+  // Works!
+  expect(arr1).toEqual(arr2);
+
+  let arr3 = [1, 2, {foo: {bar: 'baz'}}];
+  let arr4 = [1, 2, {foo: {bar: 'baz'}}];
+  // Still works!
+  expect(arr3).toEqual(arr4);
+});
+
 test('adding positive numbers is not zero', () => {
   for (let a = 1; a < 10; a++) {
     for (let b = 1; b < 10; b++) {
