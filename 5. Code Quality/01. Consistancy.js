@@ -6,5 +6,3 @@ function addToArray(base_positions, newPosition){
 }
 
 // Let eslint make sure your code follows a consistant, readable style
-
-
