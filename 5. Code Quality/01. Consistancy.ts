@@ -1,3 +1,7 @@
+class Point {
+  constructor(public x, public y){};
+}
+
 function addToArray(base_positions, newPosition){
   if(newPosition.y > newPosition.x)
       base_positions.push(newPosition);
@@ -6,3 +10,17 @@ function addToArray(base_positions, newPosition){
 }
 
 // Let eslint make sure your code follows a consistant, readable style
+
+class C {
+  public x;
+  public y;
+
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+}
+
+class D {
+  constructor(public x, public y) {}
+}
