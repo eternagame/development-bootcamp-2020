@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8">
+    </head>
+    <body>
+        <div id="app">
+            <fancy-panel>Hello</fancy-panel>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+            // We can make use of slots to allow markup to be passed to the component
+            // and placed somewhere inside!
+            Vue.component('fancy-panel', {
+                template: `
+                <div style="background-color: #ff4444; padding: 20px; color: black; border-radius: 5px;">
+                    <slot></slot>
+                </div>
+                `,
+            });
+
+            var app = new Vue({
+                el: '#app',
+            });
+        </script>
+    </body>
+</html>

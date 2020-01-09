@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8">
+    </head>
+    <body>
+        <div id="app">
+            <h1>Hello App!</h1>
+            <p>
+              <router-link to="/user/123/profile">Go to User 123</router-link>
+              <router-link to="/user/Bob/profile">Go to Bob</router-link>
+              <br>
+              Go to user <input type="text" v-model="username"><button @click="goToUser">Go</button>
+            </p>
+            <router-view></router-view>
+          </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+        <script>
+            const User = Vue.component('user', {
+                // The `$route` property is automatically added by Vue
+                // and contains information about the current route
+                template: `<div>{{ $route.params.username }}'s profile</div>`,
+            });
+
+            var app = new Vue({
+                el: '#app',
+                router: new VueRouter({
+                    routes: [
+                        // Use a colon and a name to specify that that component
+                        // of the URL is dynamic, and add that property to the route
+                        {
+                            path: '/user/:username/profile',
+                            name: 'user',
+                            component: User,
+                        }
+                    ]
+                }),
+                data: {
+                    username: ''
+                },
+                methods: {
+                    goToUser() {
+                        // $router is a property automatically added by Vue
+                        // to refer to the router instance
+                        // We can programatically change between pages this way too!
+                        this.$router.push({name: 'user', params: {username: this.username}})
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>

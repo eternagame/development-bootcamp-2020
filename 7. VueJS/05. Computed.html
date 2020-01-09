@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8">
+    </head>
+    <body>
+        <div id="app">
+            <span v-bind:style="fancyStyle">My color is changing!</span>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    hue: 0
+                },
+                computed: {
+                    // With a *computed property*, it can be used in a template just like
+                    // a regular property in data can, and when data it relies on changes,
+                    // Vue will still rerender it!
+                    fancyStyle() {
+                        return `color: hsl(${this.hue}, 100%, 45%)`
+                    }
+                }
+            });
+
+            setInterval(() => {
+                app.hue = app.hue + 1;
+            }, 20);
+        </script>
+    </body>
+</html>

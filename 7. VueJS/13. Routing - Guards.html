@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8">
+    </head>
+    <body>
+        <div id="app">
+            <h1>Hello App!</h1>
+            <p>
+              <router-link to="/user/123/profile">Go to User 123</router-link>
+              <router-link to="/user/Bob/profile">Go to Bob</router-link>
+              <router-link to="/user/Admin/profile">Go to Admin</router-link>
+            </p>
+            <router-view></router-view>
+          </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+        <script>
+            const User = Vue.component('user', {
+                // The `$route` property is automatically added by Vue
+                // and contains information about the current route
+                template: `<div>{{ $route.params.username }}'s profile</div>`,
+            });
+
+            const Error = Vue.component('error', {
+                template: `<div>You can't do that!</div>`,
+            });
+
+            var app = new Vue({
+                el: '#app',
+                router: new VueRouter({
+                    routes: [
+                        // Use a colon and a name to specify that that component
+                        // of the URL is dynamic, and add that property to the route
+                        {
+                            path: '/user/:username/profile',
+                            name: 'user',
+                            component: User,
+                            // Called before the route that renders this component is confirmed.
+                            beforeEnter: (to, from, next) => {
+                                // We can redirect somewhere else!
+                                if (to.params.username == 'Admin') next('/error');
+                                else next();
+                            },
+                            // Called when the route that renders this component has changed,
+                            // but this component is reused in the new route.
+                            beforeRouteUpdate: (to, from, next) => {
+                                if (to.params.username == 'Admin') next('/error');
+                                else next();
+                            }
+                        },
+                        { path: '/error', component: Error }
+                    ]
+                }),
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8">
+    </head>
+    <body>
+        <div id="app">
+            <!--
+                Components are reusable pieces of your page that can be
+                treated just like an element. This provides the ability for
+                some nice encapsulation and separation of concerns!
+            -->
+            <todo-item  v-for="item in groceryList" :text="item"></todo-item>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+            Vue.component('todo-item', {
+                template: `<li>
+                    <input type="checkbox" v-model="done">
+                    <del v-if="done"> {{ text }} </del>
+                    <span v-else> {{ text }} </span>
+                </li>
+                `,
+                // You can specify that a component can be passed some data
+                props: ['text'],
+                // And it can have data, computed properties, methods, etc just like
+                // your root vue app! Note that we have to use a function here,
+                // since otherwise we'd be reusing the same object instance across all
+                // component instances
+                data: () => {
+                    return {
+                        done: false
+                    }
+                },
+            });
+
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    groceryList: [
+                        'Milk',
+                        'Eggs',
+                        'Bread',
+                    ]
+                }
+            });
+        </script>
+    </body>
+</html>

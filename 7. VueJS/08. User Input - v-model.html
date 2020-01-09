@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8">
+    </head>
+    <body>
+        <div id="app">
+            <!--
+                v-model allows us to automatically tie the contents of an input
+                to a property on data
+            -->
+            <input v-model="message">
+            <br>
+            {{message}}
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    message: ''
+                },
+            });
+
+            // If you type into the input message will change, but if you change the property
+            // from JS, it will also update the input contents! This is called *two way data binding*
+            setInterval(() => app.message = app.message.split('').reverse().join(''), 1000)
+        </script>
+    </body>
+</html>

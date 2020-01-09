@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8">
+    </head>
+    <body>
+        <div id="app">
+            <h1>Hello App!</h1>
+            <p>
+              <!-- use router-link component for navigation. -->
+              <!-- specify the link by passing the `to` prop. -->
+              <!-- `<router-link>` will be rendered as an `<a>` tag by default -->
+              <router-link to="/foo">Go to Foo</router-link>
+              <router-link to="/bar">Go to Bar</router-link>
+            </p>
+            <!-- route outlet -->
+            <!-- component matched by the route will render here -->
+            <router-view></router-view>
+          </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+        <script>
+            const Foo = Vue.component('foo', {
+                template: `<div>Foo page!</div>`,
+            });
+
+            const Bar = Vue.component('bar', {
+                template: `<div>Bar page!</div>`,
+            });
+
+            var app = new Vue({
+                el: '#app',
+                // Create a new router and pass it to the vue app
+                router: new VueRouter({
+                    routes: [
+                        // define the urls for individual pages and the component
+                        // that should be displayed on the given page
+                        { path: '/foo', component: Foo },
+                        { path: '/bar', component: Bar },
+                    ]
+                })
+            });
+        </script>
+    </body>
+</html>

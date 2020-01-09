@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8">
+    </head>
+    <body>
+        <div id="app">
+            <!-- You can even have a property bound to some data -->
+            <span v-bind:style="fancyStyle">My color is changing!</span>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    fancyStyle: ''
+                }
+            });
+
+            let hue = 0;
+            setInterval(() => {
+                hue = hue + 1;
+                app.fancyStyle = `color: hsl(${hue}, 100%, 45%)`
+            }, 20);
+        </script>
+    </body>
+</html>

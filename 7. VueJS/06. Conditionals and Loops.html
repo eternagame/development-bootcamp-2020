@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8">
+    </head>
+    <body>
+        <div id="app">
+            <ul>
+                <!-- We can take each element in an array, and create an element for each one -->
+                <li v-for="todo in toDos">
+                    <!-- We have access to the element we're using -->
+                    {{todo.title}}
+                    <!-- We can conditionally choose whether to render elements or not -->
+                    <span v-if="todo.done" style="color: green;">DONE!!</span>
+                    <!-- And it has full support for if/elseif/else -->
+                    <span v-else style="color: red;">Working on it</span>
+                </li>
+            </ul>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    toDos: [
+                        {title: 'Learn JavaScript', done: true},
+                        {title: 'Learn Vue', done: false},
+                    ]
+                },
+            });
+
+            setTimeout(() => {
+                // If we change the property used in the v-if it'll update
+                app.toDos[1].done = true;
+                // And if we change the items in the array, that'll be reflected too!
+                app.toDos.push({title: 'Build something awesome', done: false});
+            }, 2000);
+        </script>
+    </body>
+</html>
