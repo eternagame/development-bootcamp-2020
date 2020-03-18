@@ -1,6 +1,14 @@
 # development-bootcamp
 Resources for the Eterna development bootcamp
 
+If you're interested in helping out with development, please join the [Eterna Player-led Development Slack](https://join.slack.com/t/eternaplayerdev/shared_invite/enQtODk1Njk0MTQxMDQ2LWFmZjFhNDMwM2NlNjkyMzYxZDNjOTNiNzhhNTY0MDcxNWNlOWE4YjkyZmQzZWY1YmEzZmFlMmU5NWM0MWFjZjM) to join in the discussion!
+
+## Primary Open-source Projects
+* Puzzle Solving/RNA Design Webapp: https://github.com/eternagame/EternaJS
+* Website Rewrite: https://github.com/eternagame/eternagame.org
+* Web Chat: https://github.com/eternagame/HTML-Chat
+* Synthesis Data Browser: https://github.com/eternagame/data-browser
+
 ## Recordings
 There are two videos in each. There is a "forward" button on the player, and it will also automatically advance on completion
 
