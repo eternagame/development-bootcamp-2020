@@ -3,7 +3,7 @@ Resources for the Eterna development bootcamp
 
 Interested in development? Join the discusson on the Eterna Discord!
 
-[![test](https://discord.com/api/guilds/702618517589065758/widget.png?style=banner2)](https://discord.gg/KYeTwux)
+[![Eterna Discord](https://discord.com/api/guilds/702618517589065758/widget.png?style=banner2)](https://discord.gg/KYeTwux)
 
 ## Primary Open-source Projects
 * Puzzle Solving/RNA Design Webapp: https://github.com/eternagame/EternaJS
