@@ -1,7 +1,9 @@
 # development-bootcamp
 Resources for the Eterna development bootcamp
 
-If you're interested in helping out with development, please join the [Eterna Player-led Development Slack](https://join.slack.com/t/eternaplayerdev/shared_invite/enQtODk1Njk0MTQxMDQ2LWFmZjFhNDMwM2NlNjkyMzYxZDNjOTNiNzhhNTY0MDcxNWNlOWE4YjkyZmQzZWY1YmEzZmFlMmU5NWM0MWFjZjM) to join in the discussion!
+Interested in development? Join the discusson on the Eterna Discord!
+
+[![test](https://discord.com/api/guilds/702618517589065758/widget.png?style=banner2)](https://discord.gg/KYeTwux)
 
 ## Primary Open-source Projects
 * Puzzle Solving/RNA Design Webapp: https://github.com/eternagame/EternaJS
