@@ -1,4 +1,4 @@
-const sum = require('./sum');
+const sum = require('.');
 
 // Derived from https://jestjs.io/docs/en/using-matchers
 
