@@ -1,15 +1,5 @@
 # development-bootcamp
-Resources for the Eterna development bootcamp
-
-Interested in development? Join the discusson on the Eterna Discord!
-
-[![Eterna Discord](https://discord.com/api/guilds/702618517589065758/widget.png?style=banner2)](https://discord.gg/KYeTwux)
-
-## Primary Open-source Projects
-* Puzzle Solving/RNA Design Webapp: https://github.com/eternagame/EternaJS
-* Website Rewrite: https://github.com/eternagame/eternagame.org
-* Web Chat: https://github.com/eternagame/HTML-Chat
-* Synthesis Data Browser: https://github.com/eternagame/data-browser
+Resources for the 2020 Eterna development bootcamp
 
 ## Recordings
 There are two videos in each. There is a "forward" button on the player, and it will also automatically advance on completion
